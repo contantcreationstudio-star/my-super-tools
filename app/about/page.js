@@ -1,6 +1,16 @@
 'use client';
 
+import { Suspense } from 'react';
+
 export default function AboutPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-white pt-24 px-6 flex justify-center text-slate-500">Loading...</div>}>
+            <AboutContent />
+        </Suspense>
+    );
+}
+
+function AboutContent() {
     return (
         <div className="min-h-screen bg-white pt-24 px-6 pb-20">
             <div className="max-w-3xl mx-auto">
