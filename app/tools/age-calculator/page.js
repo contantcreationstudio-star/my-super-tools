@@ -56,12 +56,7 @@ export default function AgeCalculatorPage() {
             totalWeeks, heartbeats, daysToBday
         });
 
-        // Mobile: Calculate dabane par result par scroll karo
-        if (window.innerWidth < 768) {
-            setTimeout(() => {
-                document.getElementById('result-section')?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }
+
     };
 
     // Live Update
