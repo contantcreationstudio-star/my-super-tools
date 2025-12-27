@@ -1,5 +1,6 @@
 
 import './globals.css'
+import { Suspense } from 'react'
 import { Inter } from 'next/font/google'
 import Navbar from '../components/Navbar'
 
@@ -17,7 +18,10 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-slate-50 text-slate-900 min-h-screen flex flex-col`}>
 
         {/* --- NAVBAR --- */}
-        <Navbar />
+        {/* --- NAVBAR --- */}
+        <Suspense fallback={<div className="h-16 bg-white/70 backdrop-blur-xl border-b border-indigo-50/50"></div>}>
+          <Navbar />
+        </Suspense>
 
         <main className="flex-grow w-full pt-28">
           {children}
