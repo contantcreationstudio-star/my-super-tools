@@ -19,17 +19,9 @@ export default function RootLayout({ children }) {
 
         {/* --- NAVBAR --- */}
 
-        {/* <Suspense fallback={<div className="h-16 bg-white/70 backdrop-blur-xl border-b border-indigo-50/50"></div>}>
+        <Suspense fallback={<div className="h-16 bg-white/70 backdrop-blur-xl border-b border-indigo-50/50"></div>}>
           <Navbar />
-        </Suspense> */}
-
-        <Suspense fallback={<div className="h-16 bg-white/80" />}>
-
-      <header className="..."> 
-         {/* ... Aapka pura Navbar code yahan ... */}
-      </header>
-
-  </Suspense>
+        </Suspense>
 
         <main className="flex-grow w-full pt-28">
           {children}
