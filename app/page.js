@@ -1,11 +1,21 @@
 'use client'; // 👈 Yeh jaruri hai interactivity ke liye
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { tools } from '../config/tools';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function Home() {
+  return (
+    <Suspense fallback={<div className="bg-white min-h-screen relative font-sans">
+      {/* Optional: Add a nice loading skeleton matching the hero section if desired */}
+    </div>}>
+      <HomeContent />
+    </Suspense>
+  );
+}
+
+function HomeContent() {
   // --- STATE MANAGEMENT (Dimag) ---
   const [activeTab, setActiveTab] = useState('All');
 
@@ -102,8 +112,8 @@ export default function Home() {
                 </button>
               ))}
             </div>
-
           </div>
+
         </section>
 
         {/* --- TOOLS GRID --- */}

@@ -1,11 +1,19 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { Suspense, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { tools } from '../config/tools';
 
 export default function Navbar() {
+    return (
+        <Suspense fallback={<div className="h-16 bg-white/70 backdrop-blur-xl border-b border-indigo-50/50"></div>}>
+            <NavbarContent />
+        </Suspense>
+    );
+}
+
+function NavbarContent() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const router = useRouter();
