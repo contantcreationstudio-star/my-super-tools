@@ -18,10 +18,18 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-slate-50 text-slate-900 min-h-screen flex flex-col`}>
 
         {/* --- NAVBAR --- */}
-        {/* --- NAVBAR --- */}
-        <Suspense fallback={<div className="h-16 bg-white/70 backdrop-blur-xl border-b border-indigo-50/50"></div>}>
+
+        {/* <Suspense fallback={<div className="h-16 bg-white/70 backdrop-blur-xl border-b border-indigo-50/50"></div>}>
           <Navbar />
-        </Suspense>
+        </Suspense> */}
+
+        <Suspense fallback={<div className="h-16 bg-white/80" />}>
+
+      <header className="..."> 
+         {/* ... Aapka pura Navbar code yahan ... */}
+      </header>
+
+  </Suspense>
 
         <main className="flex-grow w-full pt-28">
           {children}
