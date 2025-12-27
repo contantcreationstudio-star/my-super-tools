@@ -35,10 +35,10 @@ export default function LoveCalculator() {
             setResult({ percentage, message });
             setLoading(false);
 
-            // Mobile pe result pe scroll karo
-            if (window.innerWidth < 768) {
-                document.getElementById('result-area')?.scrollIntoView({ behavior: 'smooth' });
-            }
+            // Mobile pe result pe scroll karo - REMOVED
+            // if (window.innerWidth < 768) {
+            //     document.getElementById('result-area')?.scrollIntoView({ behavior: 'smooth' });
+            // }
         }, 1500);
     };
 
@@ -121,7 +121,7 @@ export default function LoveCalculator() {
                     </div>
 
                     {/* RIGHT: RESULT */}
-                    <div id="result-area" className="bg-white/90 backdrop-blur-xl p-6 md:p-10 rounded-[2.5rem] border border-pink-100 shadow-xl flex flex-col items-center justify-center min-h-[500px] relative overflow-hidden text-center">
+                    <div id="result-area" className="bg-white/90 backdrop-blur-xl p-6 md:p-10 rounded-[2.5rem] border border-pink-100 shadow-xl flex flex-col items-center justify-center min-h-[500px] relative text-center">
 
                         {loading ? (
                             // Loading Heart Animation
