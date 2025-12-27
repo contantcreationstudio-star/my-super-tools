@@ -15,5 +15,13 @@ export const tools = [
         icon: "❤️",
         link: "/tools/love-calculator",
         category: "Fun"
+    },
+    {
+        id: "ideal-weight",
+        name: "Ideal Weight Calc",
+        description: "Check exactly how much you should weigh according to your height & age.",
+        icon: "⚖️",
+        link: "/tools/ideal-weight",
+        category: "Health"
     }
 ];
