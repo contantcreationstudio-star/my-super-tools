@@ -496,33 +496,48 @@ export default function PageNumberingTool() {
                                 <div className="w-14 h-14 border-4 border-indigo-200 border-t-indigo-500 rounded-full animate-spin shadow-xl"></div>
                                 <p className="mt-6 text-indigo-600 font-bold bg-white px-4 py-1 rounded-full shadow-sm text-sm">Rendering Preview...</p>
                             </div>
-                        ) : previewUrl && (
-                            <div className="relative shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] transition-all duration-300 z-10 group">
-                                <img src={previewUrl} alt="Preview" className="max-w-none rounded shadow-sm border border-slate-200 bg-white" style={{ maxHeight: 'calc(100vh - 180px)' }} />
-                                {/* Live Overlay */}
-                                {previewInfo.show && (
-                                    <div
-                                        className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-150 border-2 border-indigo-500 bg-indigo-500/10 backdrop-blur-[2px] px-3 py-1 whitespace-nowrap z-20 hover:bg-indigo-500/20 shadow-sm rounded-[4px] cursor-move select-none"
-                                        style={{
-                                            left: position.includes('left') ? '0%' : position.includes('right') ? '100%' : '50%',
-                                            top: position.includes('top') ? '0%' : '100%',
-                                            marginLeft: position.includes('left') ? `${margin / 2}px` : 0,
-                                            marginRight: position.includes('right') ? `${margin / 2}px` : 0,
-                                            marginTop: position.includes('top') ? `${margin / 2}px` : 0,
-                                            marginBottom: position.includes('bottom') ? `${margin / 2}px` : 0,
-                                            transform: `translate(${position.includes('left') ? '0' : position.includes('right') ? '-100%' : '-50%'}, ${position.includes('top') ? '0' : '-100%'})`,
-                                            fontSize: `${fontSize * 0.8}px`,
-                                            color: color,
-                                            fontFamily: fontFamily === 'Times' ? 'Times New Roman' : fontFamily === 'Courier' ? 'Courier New' : 'Helvetica, sans-serif',
-                                            fontWeight: isBold ? 'bold' : 'normal',
-                                            fontStyle: isItalic ? 'italic' : 'normal',
-                                            opacity: opacity
-                                        }}
-                                    >
-                                        {format === 'custom'
-                                            ? customText.replace('{n}', previewInfo.number).replace('{total}', previewInfo.total)
-                                            : format.replace('1', previewInfo.number).replace('n', previewInfo.total)
-                                        }
+                        ) : previewImages.length > 0 && (
+                            <div className="w-full max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-10 px-4">
+                                {previewImages.map((img, idx) => {
+                                    const text = getPageNumberText(img.index);
+                                    return (
+                                        <div key={idx} className="relative group">
+                                            {/* Page Number Label */}
+                                            <div className="absolute -top-5 left-0 text-[10px] font-bold text-slate-400 uppercase tracking-wide">Page {img.index + 1}</div>
+
+                                            <div className="relative shadow-sm hover:shadow-md ring-1 ring-slate-900/5 transition-all duration-300 z-10 group bg-white rounded-sm overflow-hidden">
+                                                <img src={img.url} alt={`Page ${img.index + 1}`} className="w-full h-auto bg-white" />
+
+                                                {/* Live Overlay for this page */}
+                                                {text && (
+                                                    <div
+                                                        className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-150 border-2 border-indigo-500 bg-indigo-500/10 backdrop-blur-[2px] px-2 py-0.5 whitespace-nowrap z-20 shadow-sm rounded-[4px] select-none"
+                                                        style={{
+                                                            left: position.includes('left') ? '0%' : position.includes('right') ? '100%' : '50%',
+                                                            top: position.includes('top') ? '0%' : '100%',
+                                                            marginLeft: position.includes('left') ? `${margin / 2}px` : 0,
+                                                            marginRight: position.includes('right') ? `${margin / 2}px` : 0,
+                                                            marginTop: position.includes('top') ? `${margin / 2}px` : 0,
+                                                            marginBottom: position.includes('bottom') ? `${margin / 3}px` : 0,
+                                                            transform: `translate(${position.includes('left') ? '0' : position.includes('right') ? '-100%' : '-50%'}, ${position.includes('top') ? '0' : '-100%'})`,
+                                                            fontSize: `${fontSize * 0.4}px`, // High scaling for small cards
+                                                            color: color,
+                                                            fontFamily: fontFamily === 'Times' ? 'Times New Roman' : fontFamily === 'Courier' ? 'Courier New' : 'Helvetica, sans-serif',
+                                                            fontWeight: isBold ? 'bold' : 'normal',
+                                                            fontStyle: isItalic ? 'italic' : 'normal',
+                                                            opacity: opacity
+                                                        }}
+                                                    >
+                                                        {text}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                                {pageCount > 12 && (
+                                    <div className="md:col-span-2 text-center py-4">
+                                        <p className="text-sm text-slate-400 italic">Showing first 12 pages of {pageCount}...</p>
                                     </div>
                                 )}
                             </div>
