@@ -90,7 +90,8 @@ function NavbarContent() {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-2 text-sm font-medium text-slate-600">
                     <Link href="/" className="px-4 py-2 rounded-full hover:bg-slate-100/80 hover:text-indigo-600 transition-all">Home</Link>
-                    <Link href="/#blog" className="px-4 py-2 rounded-full hover:bg-slate-100/80 hover:text-indigo-600 transition-all">Blog</Link>
+
+                    <Link href="/blog" className="px-4 py-2 rounded-full hover:bg-slate-100/80 hover:text-indigo-600 transition-all">Blog</Link>
                     <Link href="/about" className="px-4 py-2 rounded-full hover:bg-slate-100/80 hover:text-indigo-600 transition-all">About</Link>
                     <Link href="/contact" className="px-4 py-2 rounded-full hover:bg-slate-100/80 hover:text-indigo-600 transition-all">Contact</Link>
                 </div>
@@ -214,7 +215,7 @@ function NavbarContent() {
                     <Link href="/" className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 text-slate-600 font-medium hover:text-indigo-600 transition-colors" onClick={() => setIsMenuOpen(false)}>
                         <span className="text-xl">🏠</span> Home
                     </Link>
-                    <Link href="/#blog" className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 text-slate-600 font-medium hover:text-indigo-600 transition-colors" onClick={() => setIsMenuOpen(false)}>
+                    <Link href="/blog" className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 text-slate-600 font-medium hover:text-indigo-600 transition-colors" onClick={() => setIsMenuOpen(false)}>
                         <span className="text-xl">📝</span> Blog
                     </Link>
                     <Link href="/about" className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 text-slate-600 font-medium hover:text-indigo-600 transition-colors" onClick={() => setIsMenuOpen(false)}>

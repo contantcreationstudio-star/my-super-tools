@@ -57,7 +57,7 @@ function HomeContent() {
       <div className="relative z-10">
 
         {/* --- HERO SECTION --- */}
-        <section className="pt-6 pb-20 text-center px-6">
+        <section className="pt-6 pb-12 text-center px-6">
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-xs font-bold mb-8 uppercase tracking-wider animate-fade-in-up">
             <span className="relative flex h-2 w-2">
@@ -99,7 +99,7 @@ function HomeContent() {
 
             {/* 2. Live Tab Filters */}
             <div className="flex flex-wrap justify-center gap-2">
-              {['All', 'Personal', 'Math', 'Design'].map((tab) => (
+              {['All', ...new Set(tools.map(t => t.category))].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
@@ -117,58 +117,61 @@ function HomeContent() {
         </section>
 
         {/* --- TOOLS GRID --- */}
-        <section className="max-w-7xl mx-auto px-6 pb-32">
+        <section className="max-w-7xl mx-auto px-6 pb-20">
 
           {/* Result Counter */}
-          <div className="mb-8 text-slate-400 font-medium text-sm ml-2">
+          <div className="mb-6 text-slate-400 font-medium text-xs ml-1 uppercase tracking-wider">
             Showing {filteredTools.length} tools
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filteredTools.length > 0 ? (
               filteredTools.map((tool) => (
                 <Link href={tool.link} key={tool.id} className="group relative block">
 
                   {/* Spotlight Effect Border */}
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500"></div>
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition duration-500"></div>
 
-                  <div className="relative h-full bg-white p-8 rounded-2xl border border-slate-100 shadow-sm group-hover:shadow-md transition-all flex flex-col items-start overflow-hidden">
+                  <div className="relative h-full bg-white p-5 rounded-xl border border-slate-100 shadow-sm group-hover:shadow-md transition-all flex flex-col items-start overflow-hidden">
 
                     {/* Background Decoration Blob */}
-                    <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-indigo-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div className="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-indigo-50 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-                    {/* Icon */}
-                    <div className="relative w-14 h-14 bg-slate-50 text-3xl rounded-2xl flex items-center justify-center mb-6 border border-slate-100 group-hover:scale-110 group-hover:rotate-6 group-hover:border-indigo-100 group-hover:bg-indigo-50 transition-all duration-300">
-                      {tool.icon}
+                    <div className="flex items-start gap-4 w-full mb-3">
+                      {/* Compact Icon */}
+                      <div className="relative w-10 h-10 bg-slate-50 text-xl rounded-lg flex items-center justify-center border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50 transition-colors shrink-0">
+                        {tool.icon}
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-sm font-bold text-slate-900 truncate pr-2 group-hover:text-indigo-600 transition-colors">
+                          {tool.name}
+                        </h3>
+                        <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider mt-0.5">
+                          {tool.category}
+                        </div>
+                      </div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-slate-900 mb-2 z-10">
-                      {tool.name}
-                    </h3>
-
-                    <p className="text-slate-500 text-sm leading-relaxed mb-6 z-10">
+                    <p className="text-slate-500 text-xs leading-relaxed line-clamp-2 mb-0">
                       {tool.description}
                     </p>
 
-                    <div className="mt-auto flex items-center text-sm font-bold text-indigo-600 z-10">
-                      Launch Tool <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
-                    </div>
                   </div>
                 </Link>
               ))
             ) : (
               // Empty State
-              <div className="col-span-full text-center py-20 bg-slate-50 rounded-3xl border border-dashed border-slate-200">
-                <div className="text-4xl mb-4">👻</div>
-                <h3 className="text-lg font-bold text-slate-900">No tools found</h3>
-                <p className="text-slate-500">Try searching for something else.</p>
+              <div className="col-span-full text-center py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                <div className="text-2xl mb-2">👻</div>
+                <h3 className="text-sm font-bold text-slate-900">No tools found</h3>
                 <button
                   onClick={() => {
                     setSearchQuery('');
                     router.push('/');
                     setActiveTab('All');
                   }}
-                  className="mt-4 text-indigo-600 font-bold hover:underline"
+                  className="mt-2 text-indigo-600 text-xs font-bold hover:underline"
                 >
                   Clear Filters
                 </button>

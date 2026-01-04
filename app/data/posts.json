@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "title": "Introducing SuperTools v2.0",
+        "excerpt": "We've completely rebuilt SuperTools from the ground up for speed, privacy, and a stunning new UI. See what's new.",
+        "content": "<p className=\"mb-4\">We are thrilled to announce the release of SuperTools v2.0! This update brings a complete overhaul of our design system, significantly faster load times, and a suite of new privacy-focused features.</p><h3 className=\"text-2xl font-bold mt-8 mb-4\">What's New?</h3><ul className=\"list-disc pl-6 space-y-2 mb-6\"><li><strong>Glassmorphism UI:</strong> A stunning new look that feels right at home on modern devices.</li><li><strong>Instant Load:</strong> Optimized bundle sizes mean tools load in milliseconds.</li><li><strong>Enhanced Privacy:</strong> All processing happens in your browser. No data leaves your device.</li></ul><p>We've also added 5 new tools including the requested WiFi QR Code Generator and Image Converter. Give them a spin!</p>",
+        "date": "Jan 1, 2025",
+        "category": "Announcement",
+        "readTime": "3 min read",
+        "slug": "introducing-v2",
+        "image": "🚀"
+    },
+    {
+        "id": 2,
+        "title": "How to Merge PDFs Like a Pro",
+        "excerpt": "Stop paying for simple PDF tools. Learn how to merge, compress, and organize your documents securely in your browser.",
+        "content": "<p className=\"mb-4\">PDFs are ubiquitous, but managing them shouldn't be a hassle. In this guide, we'll show you how to combine multiple PDF documents into a single file using SuperTools—without uploading your sensitive data to a unknown server.</p><h3 className=\"text-2xl font-bold mt-8 mb-4\">Step-by-Step Guide</h3><ol className=\"list-decimal pl-6 space-y-2 mb-6\"><li>Open the <strong>Image to PDF</strong> tool.</li><li>Drag and drop your images or existing PDF pages.</li><li>Reorder them as needed using our drag-and-drop interface.</li><li>Click <strong>Generate PDF</strong>.</li></ol><p>It's that simple. Secure, fast, and free. Try it out today!</p>",
+        "date": "Dec 28, 2024",
+        "category": "Tutorial",
+        "readTime": "5 min read",
+        "slug": "pdf-merger-guide",
+        "image": "📄",
+        "relatedTool": {
+            "name": "JPG to PDF Merger",
+            "link": "/tools/image-to-pdf",
+            "icon": "📄"
+        }
+    },
+    {
+        "id": 3,
+        "title": "The Science Behind Ideal Weight",
+        "excerpt": "Understanding BMI, Robinson, Miller, and Devine formulas. How we calculate your ideal weight metrics accurately.",
+        "content": "<p className=\"mb-4\">\"Ideal weight\" is a controversial term, but medically used formulas can provide a general guideline for healthy weight ranges. Our calculator uses four distinct formulas to give you a comprehensive view.</p><h3 className=\"text-2xl font-bold mt-8 mb-4\">The Formulas</h3><ul className=\"list-disc pl-6 space-y-2 mb-6\"><li><strong>Robinson (1983):</strong> Originally designed for drug dosage calculations.</li><li><strong>Miller (1983):</strong> Often used to estimate lean body mass.</li><li><strong>Devine (1974):</strong> The most widely used formula for medical dosages.</li><li><strong>Hamwi (1964):</strong> A field rule of thumb for quick estimates.</li></ul><p>Remember, these are just estimates. Always consult a healthcare professional for personalized advice.</p>",
+        "date": "Dec 25, 2024",
+        "category": "Health",
+        "readTime": "4 min read",
+        "slug": "ideal-weight-science",
+        "image": "⚖️",
+        "relatedTool": {
+            "name": "Ideal Weight Calculator",
+            "link": "/tools/ideal-weight",
+            "icon": "⚖️"
+        }
+    },
+    {
+        "id": 4,
+        "title": "Top 5 Productivity Tools for 2025",
+        "excerpt": "Boost your workflow with these essential utilities. From word counters to decision makers, we've got you covered.",
+        "content": "<p className=\"mb-4\">Start the new year right with these essential productivity boosters available right here on SuperTools.</p><div className=\"grid grid-cols-1 md:grid-cols-2 gap-4 mt-6\"><div className=\"p-4 bg-slate-100 rounded-lg\"><h4 className=\"font-bold\">1. Word Counter</h4><p className=\"text-sm text-slate-600\">Perfect for essay writing and SEO optimization.</p></div><div className=\"p-4 bg-slate-100 rounded-lg\"><h4 className=\"font-bold\">2. Pomodoro Timer</h4><p className=\"text-sm text-slate-600\">Stay focused with intervals (Coming Soon).</p></div></div>",
+        "date": "Dec 20, 2024",
+        "category": "Productivity",
+        "readTime": "6 min read",
+        "slug": "top-productivity-tools",
+        "image": "⚡",
+        "relatedTool": {
+            "name": "Word Counter",
+            "link": "/tools/word-counter",
+            "icon": "📝"
+        }
+    },
+    {
+        "id": 5,
+        "title": "The Future of AI in 2026",
+        "excerpt": "Generative AI is evolving rapidly. Expert predictions on what to expect in the coming year.",
+        "content": "<p className=\"mb-4\">As we step into 2026, Artificial Intelligence continues to reshape the technological landscape. From multimodal models to autonomous agents, the pace of innovation shows no signs of slowing down.</p><h3 className=\"text-2xl font-bold mt-8 mb-4\">Key Trends to Watch</h3><ul className=\"list-disc pl-6 space-y-2 mb-6\"><li><strong>On-Device AI:</strong> Running powerful models locally on your phone or laptop for privacy and speed.</li><li><strong>AI Agents:</strong> Systems that not only generate text but take actions to complete complex tasks.</li><li><strong>Creative Tools:</strong> Generative AI moving beyond static images to full video and 3D asset creation.</li></ul><p>At SuperTools, we are closely monitoring these trends to bring you the cutting edge of AI utility.</p>",
+        "date": "Jan 2, 2025",
+        "category": "Tech News",
+        "readTime": "5 min read",
+        "slug": "ai-future-2026",
+        "image": "🤖"
+    },
+    {
+        "id": 6,
+        "title": "Web Assembly: The Next Big Thing?",
+        "excerpt": "Why major tech companies are betting big on Wasm for browser-based performance.",
+        "content": "<p className=\"mb-4\">WebAssembly (Wasm) is unlocking a new era of web performance, allowing code written in languages like C++, Rust, and Go to run in the browser at near-native speed.</p><h3 className=\"text-2xl font-bold mt-8 mb-4\">Why It Matters</h3><p className=\"mb-4\">Traditionally, JavaScript has been the only language of the browser. Wasm changes that, enabling high-performance applications like video editors, 3D games, and complex scientific simulations to run directly in your favorite web browser.</p><h3 className=\"text-2xl font-bold mt-8 mb-4\">SuperTools & Wasm</h3><p>Our <strong>Image Converter</strong> and <strong>PDF Merger</strong> tools already utilize WebAssembly components to process files locally on your device, ensuring maximum speed and privacy.</p>",
+        "date": "Jan 1, 2025",
+        "category": "Tech News",
+        "readTime": "4 min read",
+        "slug": "wasm-revolution",
+        "image": "🕸️"
+    }
+]

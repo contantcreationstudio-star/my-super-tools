@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     // 👇 Yahan 'suppressHydrationWarning' jodein
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-slate-50 text-slate-900 min-h-screen flex flex-col`}>
+      <body suppressHydrationWarning className={`${inter.className} bg-slate-50 text-slate-900 min-h-screen flex flex-col`}>
 
         {/* --- NAVBAR --- */}
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <Navbar />
         </Suspense>
 
-        <main className="flex-grow w-full pt-28">
+        <main className="flex-grow w-full pt-20">
           {children}
         </main>
 
